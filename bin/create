@@ -1,0 +1,8 @@
+#!/bin/bash
+
+docker create \
+  --name apt-cacher-ng \
+  --restart always \
+  -p 3142:3142 \
+  -v $PWD/cache:/var/cache/apt-cacher-ng \
+  xinix/apt-cacher-ng
