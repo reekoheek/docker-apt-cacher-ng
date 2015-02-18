@@ -4,6 +4,7 @@ docker create \
   --name apt-cacher-ng \
   --restart always \
   --net host \
-  -p 3142:3142 \
   -v $PWD/cache:/var/cache/apt-cacher-ng \
-  xinix/apt-cacher-ng
+  xinix-technology/apt-cacher-ng
+
+# -p 3142:3142 \
