@@ -1,0 +1,20 @@
+{
+    "name": "xinix-technology/apt-cacher-ng",
+    "profile": "docker",
+    "docker": {
+        "containers": {
+            "root": {
+                "volumes": [
+                    "/srv/docker/apt-cacher-ng/cache:/var/cache/apt-cacher-ng"
+                ],
+                "ports": [
+                    "3142:3142"
+                ]
+            }
+        }
+    },
+    "tasks": {
+        "build": ["docker", "build", "-t", "xinix-technology/apt-cacher-ng", "."],
+        "run": [ "docker", "run", "-ti", "--name", "apt-cacher-ng", "--net", "host", "-v", "/srv/docker/apt-cacher-ng/cache:/var/cache/apt-cacher-ng", "xinix-technology/apt-cacher-ng" ]
+    }
+}
